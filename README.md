@@ -25,4 +25,10 @@ let package = Package(
 )
 ```
 
+### Carthage
 
+On your Cartfile add the following:
+
+```
+github "qustodio/free-open-port-finder"
+```

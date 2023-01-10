@@ -11,7 +11,7 @@ public typealias Port = in_port_t
 /// let port = freeOpenPort.port
 /// ```
 public struct FreeOpenPortFinder {
-    let port: Port
+    public let port: Port
     
     public init(family: Family) throws {
         let socket = try Socket(family, type: .stream, socketProtocol: .tcp)
