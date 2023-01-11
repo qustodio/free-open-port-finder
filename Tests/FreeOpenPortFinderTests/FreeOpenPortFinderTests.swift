@@ -30,4 +30,14 @@ final class FreeOpenPortFinderTests: XCTestCase {
         
         try socket.close()
     }
+    
+    func testCheckIsThreadSafe() throws {
+        
+        DispatchQueue.concurrentPerform(iterations: 1000_000) { _ in
+            let port = try? FreeOpenPortFinder(family: .inet).port
+            
+            XCTAssertTrue((port ?? 0) > 0)
+        }
+        
+    }
 }
